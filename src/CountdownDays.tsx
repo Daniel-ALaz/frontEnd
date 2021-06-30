@@ -7,12 +7,12 @@ export const CountdownDays = (props: { date: Date }) =>
 
     useEffect(() =>
     {
-        const timer = setTimeout(() =>
+        const timer = setInterval(() =>
         {
             setDays(calculateDaysLeft(props.date));
         }, 1000);
 
-        return () => clearTimeout(timer);
+        return () => clearInterval(timer);
     });
 
     return <>{ Math.floor(days) }</>

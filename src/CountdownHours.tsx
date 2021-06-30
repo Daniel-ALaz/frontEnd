@@ -7,12 +7,12 @@ export const CountdownHours = (props: { date: Date }) =>
 
     useEffect(() =>
     {
-        const timer = setTimeout(() =>
+        const timer = setInterval(() =>
         {
             setHours(calculateHoursLeft(props.date));
         }, 1000);
 
-        return () => clearTimeout(timer);
+        return () => clearInterval(timer);
     });
 
     return <>{ Math.floor(hours) }</>
