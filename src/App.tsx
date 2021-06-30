@@ -1,6 +1,8 @@
 import { ChangeEvent, useState } from 'react';
 import { CountdownMinutes } from './CountdownMinutes';
 import { CountdownHours } from './CountdownHours';
+import { CountdownSeconds } from './CountdownSeconds';
+import { CountdownDays } from './CountdownDays';
 import './App.css';
 
 function App() 
@@ -26,12 +28,15 @@ function App()
                 // invalid date
             }
         }
+        
     };
 
     return (
         <div className="App">
             <div>
-                Quedan <CountdownHours date={date} /> horas, <CountdownMinutes date={date} /> minutos para las <input type="datetime-local" onChange={onChange} value={toLocalDateTime(date)}></input>
+                Quedan <CountdownDays date={date} /> días,<CountdownHours date={date} /> horas, 
+                <CountdownMinutes date={date} /> minutos, <CountdownSeconds date={date} /> segundos para las 
+                <input type="datetime-local" onChange={onChange} value={toLocalDateTime(date)}></input>
             </div>
         </div>
     );
