@@ -34,9 +34,7 @@ function App()
     return (
         <div className="App">
             <div>
-                Quedan <CountdownDays date={date} /> días,<CountdownHours date={date} /> horas, 
-                <CountdownMinutes date={date} /> minutos, <CountdownSeconds date={date} /> segundos para las 
-                <input type="datetime-local" onChange={onChange} value={toLocalDateTime(date)}></input>
+                Quedan <CountdownDays date={date} /> días, <CountdownHours date={date} /> horas, <CountdownMinutes date={date} /> minutos, <CountdownSeconds date={date} /> segundos para las <input type="datetime-local" onChange={onChange} value={toLocalDateTime(date)}></input>
             </div>
         </div>
     );

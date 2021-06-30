@@ -18,9 +18,13 @@ export const CountdownHours = (props: { date: Date }) =>
     return <>{ Math.floor(hours) }</>
 }
 
-let fakeCounter = 0;
+
 
 const calculateHoursLeft = (date: Date) => 
 {
-    return fakeCounter++;
+    let now = new Date();
+
+    let time_left = date.valueOf() - now.valueOf();
+
+    return Math.trunc( time_left / 1000 % (24 * 60 * 60) / (60 * 60));
 }
